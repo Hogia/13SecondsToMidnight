@@ -1,0 +1,184 @@
+* {
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+body {
+  color: #fafafa;
+    margin: 0;
+    overflow: hidden;
+    /* background: #c8cfbe; */
+    background: radial-gradient(circle, #767872 100%, #000000 0%);
+text-wrap: nowrap;
+    font-family:'Times New Roman', Times, serif;
+}
+button {
+  color:#fff;
+  border:none;
+}
+h1{
+  animation: distort .5s linear infinite;
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+#finalScore {
+  font-size: 2rem;
+  animation: distort .5s linear infinite;
+  margin-bottom: 2rem;
+}
+
+#gameCanvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+
+#timerDisplay {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size:2rem;
+    font-weight: bold;
+    z-index: 10;
+    animation: distort .5s linear infinite;
+}
+
+#gameOverScreen {
+    padding: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: none;
+    background-color: #000000b3;
+    z-index: 10;
+}
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes distort{
+    0% {filter: url("#shake0");}
+    25% {filter: url("#shake1");}
+    50% {filter: url("#shake2");}
+    75% {filter: url("#shake3");}
+    100% {filter: url("#shake4");}
+
+  }
+ 
+  #startScreen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000cc;
+    /* color: white; */
+    z-index: 1000;
+  }
+  #startButton {
+    font-size: 18px;
+    padding: 20px 40px;
+    cursor: pointer;
+    background-color: #a02727;
+    
+    /* color: #fff; */
+    animation: distort .5s linear infinite;
+  }
+  
+  #startButton:hover {
+    background-color: #bb3939;
+    animation: none;
+  }
+  
+  #gameOverScreen {
+    animation: 1s fadeIn;
+  }
+
+  #billboardContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+
+#winGameScreen {
+    padding: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: none;
+    background-color: #000000b3;
+    z-index: 10;
+}
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  #winGameScreen {
+    animation: 1s fadeIn;
+  }
+
+#winGameScreen h1 {
+    text-wrap: nowrap;
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+#restartButton {
+    font-size: 18px;
+    font-weight: 600;
+    padding: 20px 40px;
+    cursor: pointer;
+    background-color: #a02727;
+    animation: distort .5s linear infinite;
+}
+
+#restartButton:hover {
+    background-color: #ad2f2f;
+    animation: none;
+}
+
+#playAgain {
+    font-size: 18px;
+    padding: 20px 40px;
+    cursor: pointer;
+    background-color: #ad2f2f;
+    animation: distort .5s linear infinite;
+}
+
+#playAgain:hover {
+    background-color: #ad2f2f;
+    animation: none;
+}
+
+#healthDisplay {
+    position: absolute;
+    top: 3%;
+    left: 10px;
+    /* color: white; */
+    font-size: 24px;
+    font-weight: bold;
+    z-index: 10;
+}

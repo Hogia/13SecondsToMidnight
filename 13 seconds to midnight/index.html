@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13 Seconds to Midnight</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="gameCanvas"></canvas>
+    <div id="timerDisplay"></div>
+    <div id="healthDisplay"></div>
+    <div id="bubbleChat"></div>
+    <div id="gameOverScreen">
+        <h1>𝗚⃥𝗔⃥𝗠⃥𝗘⃥ 𝗢⃥𝗩⃥𝗘⃥𝗥⃥ </h1>
+         <button id="restartButton">Try Again</button>
+    </div>
+    <div id="winGameScreen">
+      <h1>𝗬⃥𝗢⃥𝗨⃥ 𝗛⃥𝗔⃥𝗩⃥𝗘⃥ 𝗘⃥𝗦⃥𝗖⃥𝗔⃥𝗣⃥𝗘⃥𝗗⃥ 𝗧⃥𝗛⃥𝗘⃥ 𝗙⃥𝗢⃥𝗥⃥𝗘⃥𝗦⃥𝗧⃥</h1>
+      <p id="finalScore"></p>
+      <button id="playAgain">Play Again</button>
+  </div>
+    <div id="startScreen">
+      <h1>𝟭⃥𝟯⃥ 𝗦⃥𝗘⃥𝗖⃥𝗢⃥𝗡⃥𝗗⃥𝗦⃥ 𝗧⃥𝗢⃥ 𝗠⃥𝗜⃥𝗗⃥𝗡⃥𝗜⃥𝗚⃥𝗛⃥𝗧⃥</h1>
+      <div style="text-align: center; font-size: 1.2rem; color:#cacaca;">
+        <h3>Escape the forest before time runs out!</h3>
+        <p>Can you survive until midnight?</p>
+        <div style="display: flex; padding: 2rem; gap:2rem; background-color: #251e1e; margin:1rem;">
+          <div>13X 🟩 Green Cubes = +5 seconds</div>
+          <div>13X 🔴 Red Balls = 2x player speed</div>
+          <div>13X 🕷️ Spiders</div>
+        </div>
+        <p>Controls: Mouse - look around, WASD / Arrow Keys - Move</p>
+      </div>
+  
+       <button id="startButton" style="margin-top: 2rem;">Run!</button>
+       
+  </div>
+   <div id="healthBar" style="z-index: 5; width: 200px; height: 20px; background-color: #333; position: absolute; top: 4%; left: 10px; animation: distort .5s linear infinite;">
+    <div id="healthFill" style="width: 100%; height: 100%; background-color: #a02727;"></div>
+</div>
+    <svg>
+        <defs>
+          <filter id="shake0">
+            <feTurbulence id="turbulence" baseFrequency="0.05" numOctaves="3" seed="0"/>
+            <feDisplacementMap id="displacement" in="SourceGraphic" in2="noise" scale="7" />
+          </filter>
+          <filter id="shake1">
+            <feTurbulence id="turbulence" baseFrequency="0.05" numOctaves="3" seed="1"/>
+            <feDisplacementMap id="displacement" in="SourceGraphic" in2="noise" scale="10" />
+          </filter>
+          <filter id="shake2">
+            <feTurbulence id="turbulence" baseFrequency="0.05" numOctaves="3" seed="2"/>
+            <feDisplacementMap id="displacement" in="SourceGraphic" in2="noise" scale="6" />
+          </filter>
+          <filter id="shake3">
+            <feTurbulence id="turbulence" baseFrequency="0.05" numOctaves="3" seed="3"/>
+            <feDisplacementMap id="displacement" in="SourceGraphic" in2="noise" scale="3" />
+          </filter>
+          <filter id="shake4">
+            <feTurbulence id="turbulence" baseFrequency="0.05" numOctaves="3" seed="4"/>
+            <feDisplacementMap id="displacement" in="SourceGraphic" in2="noise" scale="8" />
+          </filter>
+
+        </defs> 
+      </svg>
+    <script src="webgl-framework.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
