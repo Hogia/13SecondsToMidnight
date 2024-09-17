@@ -70,7 +70,7 @@ void main() {
     // Compile the Vertex shader and attach it to the program
     W.gl.compileShader(t);
     W.gl.attachShader(W.program, t);
-    if(debug) console.log('vertex shader:', W.gl.getShaderInfoLog(t) || 'OK');
+    // if(debug) console.log('vertex shader:', W.gl.getShaderInfoLog(t) || 'OK');
     
     // Create a Fragment shader
     // (This GLSL program is called for every fragment (pixel) of the scene)
@@ -102,8 +102,8 @@ void main() {
     }
     
     // Apply transparency based on height
-    float heightThreshold = 0.1 ; 
-    float transparencyFactor = smoothstep(heightThreshold, 5.2, v_height);
+    float heightThreshold = 0.1 ; // Adjust this value to control where transparency starts
+    float transparencyFactor = smoothstep(heightThreshold, 8.9, v_height);
     c.a *= 1.0 - transparencyFactor;
 
 }`
@@ -112,12 +112,12 @@ void main() {
     // Compile the Fragment shader and attach it to the program
     W.gl.compileShader(t);
     W.gl.attachShader(W.program, t);
-    if(debug) console.log('fragment shader:', W.gl.getShaderInfoLog(t) || 'OK');
+    // if(debug) console.log('fragment shader:', W.gl.getShaderInfoLog(t) || 'OK');
     
     // Compile the program
     W.gl.linkProgram(W.program);
     W.gl.useProgram(W.program);
-    if(debug) console.log('program:', W.gl.getProgramInfoLog(W.program) || 'OK');
+    // if(debug) console.log('program:', W.gl.getProgramInfoLog(W.program) || 'OK');
     
     // Set the scene's background color (RGBA)
     W.gl.clearColor(1, 1, 1, 1);
